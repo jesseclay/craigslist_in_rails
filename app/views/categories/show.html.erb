@@ -1,0 +1,11 @@
+<div class="jumbotron">
+  <h1><%=@category.category%></h1>
+  <%= link_to "make a new post, asshole", new_category_post_path(@category) %>
+  <%if @posts%>
+  <ol>
+    <%@posts.each do |post|%>
+      <li><%= link_to post.title, category_post_path(@category, post) %></li>
+    <%end%>
+  </ol>
+  <%end%>
+</div>

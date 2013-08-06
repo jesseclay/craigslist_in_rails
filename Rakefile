@@ -1,0 +1,11 @@
+# Add your own tasks in files placed in lib/tasks ending in .rake,
+# for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
+
+require File.expand_path('../config/application', __FILE__)
+
+Craigslist::Application.load_tasks
+
+desc 'reset all the shits'
+task "reset" do
+  exec "rake db:drop && rake db:create && rake db:migrate && rake db:seed"
+end

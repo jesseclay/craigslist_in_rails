@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="jumbotron"><h1>Categories:</h1></div>
+  <% if !(@categories.empty?) %>
+    <ol>
+    <% @categories.each do |category| %>
+      <li><%= link_to category.category, category %></li>
+    <%end%>
+    </ol>
+  <%end%>
+</div>
